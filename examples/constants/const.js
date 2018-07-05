@@ -26,14 +26,15 @@ if (PI === 3.141593) {
     // var PI = 20;
 }
 
+// point 4)
 // throws an error - Uncaught SyntaxError: Missing initializer in const declaration
 // const FOO;
 
-// point 4)
+// point 5)
 // const also works on objects
 const MY_OBJECT = {'key': 'value'};
 
-// point 5)
+// Point 6)
 // Attempting to overwrite the object throws an error - Uncaught TypeError: Assignment to constant variable.
 try {
     MY_OBJECT = {'OTHER_KEY': 'value'};
@@ -41,13 +42,13 @@ try {
     console.log('Attempting to overwrite the object throws an error - Uncaught TypeError: Assignment to constant variable.');
 }
 
-// Point 6)
+// Point 7)
 // However, object keys are not protected,
 // so the following statement is executed without problem
 MY_OBJECT.key = 'otherValue'; // Use Object.freeze() to make object immutable
 console.log(MY_OBJECT);
 
-// Point 7)
+// Point 8)
 // The same applies to arrays
 const MY_ARRAY = [];
 // It's possible to push items into the array
