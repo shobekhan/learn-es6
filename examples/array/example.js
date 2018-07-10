@@ -48,3 +48,11 @@ function h ({ name, val }) {
 f([ "bar", 42 ])
 g({ name: "foo", val:  7 })
 h({ name: "bar", val: 42 })
+
+// feature 7 - Fail-soft destructuring, optionally with defaults.
+var list = [ 7, 42 ]
+var [ a = 1, b = 2, c = 3, d ] = list
+console.log(a === 7);
+console.log(b === 42);
+console.log(c === 3);
+console.log(d === undefined);
