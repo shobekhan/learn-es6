@@ -33,3 +33,45 @@ const p1 = new Point(5, 5);
 const p2 = new Point(22, 22);
 
 console.log(Point.distance(p1, p2));
+
+// Sub classing with extends
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(this.name + ' makes a noise.');
+    }
+}
+
+class Dog extends Animal {
+    constructor(name) {
+        super(name); // call the super class constructor and pass in the name parameter
+    }
+
+    speak() {
+        console.log(this.name + ' barks.');
+    }
+}
+
+let d = new Dog('Mitzie');
+d.speak(); // Mitzie barks.
+
+// One may also extend traditional function-based "classes":
+function BaseAnimal (name) {
+    this.name = name;
+}
+
+BaseAnimal.prototype.speak = function () {
+    console.log(this.name + ' makes a noise.');
+}
+
+class Cat extends BaseAnimal {
+    speak() {
+        console.log(this.name + ' meows.');
+    }
+}
+
+let c = new Cat('Mitzie');
+c.speak(); // Mitzie meows.
